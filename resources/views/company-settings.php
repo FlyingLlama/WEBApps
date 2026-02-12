@@ -21,7 +21,23 @@ include __DIR__ . '/header.php';
     </div>
 <?php endif; ?>
 
-<form action="/update-company" method="POST" class="invoice-form">
+<form action="/update-company" method="POST" enctype="multipart/form-data" class="invoice-form">
+    <div class="form-section">
+        <h3>Company Logo</h3>
+        
+        <?php if (!empty($company['logo_path'])): ?>
+            <div class="current-logo">
+                <img src="<?php echo htmlspecialchars($company['logo_path']); ?>" alt="Company Logo" style="max-width: 200px; max-height: 100px; margin-bottom: 1rem;">
+            </div>
+        <?php endif; ?>
+        
+        <div class="form-group">
+            <label for="logo">Upload New Logo (JPG, PNG, GIF, WebP)</label>
+            <input type="file" id="logo" name="logo" accept="image/jpeg,image/png,image/gif,image/webp">
+            <small style="color: #666; display: block; margin-top: 0.5rem;">Leave empty to keep current logo</small>
+        </div>
+    </div>
+    
     <div class="form-section">
         <h3>Company Information</h3>
         

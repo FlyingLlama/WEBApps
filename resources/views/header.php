@@ -19,6 +19,10 @@
                     <li><a href="/invoices" class="<?php echo ($current_page ?? '') === 'invoices' ? 'active' : ''; ?>">Invoices</a></li>
                     <li><a href="/company-settings" class="<?php echo ($current_page ?? '') === 'settings' ? 'active' : ''; ?>">Settings</a></li>
                 </ul>
+                <div class="user-menu">
+                    <span class="user-name">👤 <?php echo htmlspecialchars($_SESSION['user_name'] ?? 'User'); ?></span>
+                    <a href="/logout" class="logout-btn">Logout</a>
+                </div>
             </div>
         </nav>
     </header>

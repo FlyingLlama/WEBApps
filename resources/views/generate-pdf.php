@@ -261,7 +261,11 @@ $currency_symbol = $currency_symbols[$invoice['currency']] ?? '$';
         <!-- header -->
         <div class="header">
             <div class="company-info">
-                <div class="logo-placeholder">LOGO</div>
+                <?php if (!empty($company['logo_path'])): ?>
+                    <img src="<?php echo htmlspecialchars($company['logo_path']); ?>" alt="Company Logo" style="max-width: 150px; max-height: 80px; margin-bottom: 10px;">
+                <?php else: ?>
+                    <div class="logo-placeholder">LOGO</div>
+                <?php endif; ?>
                 <h1><?php echo htmlspecialchars($company['company_name']); ?></h1>
                 <p><?php echo htmlspecialchars($company['address']); ?><br>
                    <?php echo htmlspecialchars($company['city']); ?></p>
