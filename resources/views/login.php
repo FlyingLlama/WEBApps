@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Invoice Manager</title>
+    <title>Login - Invoiceinator3000</title>
     <link rel="stylesheet" href="/css/style.css">
     <style>
         body {
@@ -114,7 +114,7 @@
 </head>
 <body>
     <div class="login-container">
-        <h2>Invoice Manager</h2>
+        <h2>Invoiceinator3000</h2>
         <p>Login to your account</p>
         
         <?php if (isset($_SESSION['error'])): ?>

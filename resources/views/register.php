@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Invoice Manager</title>
+    <title>Register - Invoiceinator3000</title>
     <link rel="stylesheet" href="/css/style.css">
     <style>
         body {
@@ -109,7 +109,7 @@
 <body>
     <div class="login-container">
         <h2>Create Account</h2>
-        <p>Register for Invoice Manager</p>
+        <p>Register for Invoiceinator3000</p>
         
         <?php if (isset($_SESSION['error'])): ?>
             <div class="alert alert-error">
@@ -150,7 +150,6 @@
     </div>
     
     <script>
-        // Password confirmation validation
         document.querySelector('form').addEventListener('submit', function(e) {
             const password = document.getElementById('password').value;
             const confirm = document.getElementById('confirm_password').value;
