@@ -32,7 +32,7 @@ $currency_symbol = $currency_symbols[$invoice['currency']] ?? '$';
     <style>
         @page {
             size: A4;
-            margin: 0;
+            margin: 15mm 15mm 15mm 15mm;
         }
         
         * {
@@ -48,9 +48,9 @@ $currency_symbol = $currency_symbols[$invoice['currency']] ?? '$';
         }
         
         .invoice-container {
-            width: 210mm;
-            min-height: 297mm;
-            padding: 20mm;
+            width: 100%;
+            max-width: 210mm;
+            page-break-inside: avoid;
             margin: 0 auto;
             background: white;
         }
@@ -58,9 +58,10 @@ $currency_symbol = $currency_symbols[$invoice['currency']] ?? '$';
         .header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
             border-bottom: 3px solid #667eea;
+            page-break-inside: avoid;
         }
         
         .company-info {
@@ -107,7 +108,8 @@ $currency_symbol = $currency_symbols[$invoice['currency']] ?? '$';
         .invoice-meta {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 40px;
+            margin-bottom: 25px;
+            page-break-inside: avoid;
         }
         
         .client-info, .invoice-details {
@@ -135,7 +137,8 @@ $currency_symbol = $currency_symbols[$invoice['currency']] ?? '$';
         .items-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            page-break-inside: auto;
         }
         
         .items-table thead {
@@ -144,7 +147,7 @@ $currency_symbol = $currency_symbols[$invoice['currency']] ?? '$';
         }
         
         .items-table th {
-            padding: 12px;
+            padding: 10px;
             text-align: left;
             font-weight: 600;
             font-size: 12px;
@@ -156,7 +159,7 @@ $currency_symbol = $currency_symbols[$invoice['currency']] ?? '$';
         }
         
         .items-table td {
-            padding: 12px;
+            padding: 10px;
             border-bottom: 1px solid #e0e0e0;
             font-size: 13px;
         }
@@ -168,7 +171,8 @@ $currency_symbol = $currency_symbols[$invoice['currency']] ?? '$';
         .totals-section {
             display: flex;
             justify-content: flex-end;
-            margin-bottom: 40px;
+            margin-bottom: 25px;
+            page-break-inside: avoid;
         }
         
         .totals-table {
@@ -178,7 +182,7 @@ $currency_symbol = $currency_symbols[$invoice['currency']] ?? '$';
         .totals-row {
             display: flex;
             justify-content: space-between;
-            padding: 8px 0;
+            padding: 6px 0;
             font-size: 14px;
         }
         
@@ -191,32 +195,33 @@ $currency_symbol = $currency_symbols[$invoice['currency']] ?? '$';
             font-weight: bold;
             font-size: 18px;
             color: #667eea;
-            padding-top: 12px;
+            padding-top: 10px;
             margin-top: 5px;
         }
         
         .notes-section {
-            margin-top: 40px;
-            padding: 20px;
+            margin-top: 25px;
+            padding: 15px;
             background: #f8f9fa;
             border-left: 4px solid #667eea;
+            page-break-inside: avoid;
         }
         
         .notes-section h3 {
             font-size: 14px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #667eea;
         }
         
         .notes-section p {
             font-size: 13px;
-            line-height: 1.6;
+            line-height: 1.5;
             color: #666;
         }
         
         .footer {
-            margin-top: 60px;
-            padding-top: 20px;
+            margin-top: 30px;
+            padding-top: 15px;
             border-top: 1px solid #e0e0e0;
             font-size: 11px;
             color: #999;
@@ -246,10 +251,21 @@ $currency_symbol = $currency_symbols[$invoice['currency']] ?? '$';
             .invoice-container {
                 padding: 0;
                 width: 100%;
+                page-break-after: avoid;
             }
             
             body {
                 margin: 0;
+                padding: 0;
+            }
+
+            .header, .invoice-meta, .items-table, .totals-section, .notes-section {
+                page-break-inside: avoid;
+            }
+    
+            .items-table tbody tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
             }
         }
     </style>
